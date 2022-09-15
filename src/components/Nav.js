@@ -19,11 +19,13 @@ const useStyles = makeStyles({
     width: 200,
     "& .MuiBackdrop-root": {
       display: "none",
+      transition: "all .0.1s",
     },
     "& .MuiDrawer-paper": {
       width: 200,
       position: "absolute",
       height: (props) => props.height,
+      transition: "all .0.1s",
     },
   },
 });
@@ -46,7 +48,6 @@ export default function Nav() {
                   <ListItemText primary={item.value} />
                 </ListItemButton>
               </ListItem>
-              //   </Box>
             ))}
           </List>
           <Divider />
@@ -70,19 +71,19 @@ export default function Nav() {
 
   return (
     <>
-      {isOpen && (
-        <>
-          <Drawer
-            anchor={"left"}
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
-            className={classes.drawer}
-            variant="persistent"
-          >
-            {list()}
-          </Drawer>
-        </>
-      )}
+      {/* {isOpen.isOpen && ( */}
+      {/* <> */}
+      <Drawer
+        anchor={"left"}
+        open={isOpen.isOpen}
+        onClose={() => setIsOpen(false)}
+        className={classes.drawer}
+        variant="persistent"
+      >
+        {list()}
+      </Drawer>
+      {/* </> */}
+      {/* )} */}
     </>
   );
 }

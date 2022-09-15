@@ -71,7 +71,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Header({ state, toggleDrawer }) {
+export default function Header() {
   const [isOpen, setIsOpen] = useRecoilState(isNavOpen);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -96,7 +96,11 @@ export default function Header({ state, toggleDrawer }) {
               color="inherit"
               aria-label="menu"
               sx={{ mr: 2 }}
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() =>
+                setIsOpen((prev) => {
+                  return { isOpen: !prev.isOpen };
+                })
+              }
             >
               <MenuIcon />
             </IconButton>

@@ -20,7 +20,7 @@ function App() {
 export const isNavOpen = atom({
   key: "navOpen",
   default: {
-    isOpen: false,
+    isOpen: true,
   },
 });
 
