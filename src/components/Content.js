@@ -4,7 +4,7 @@ import EditUser from "./EditUser";
 import Main from "./Main";
 import Nav from "./Nav";
 
-export default function Content({ state, toggleDrawer }) {
+export default function Content() {
   return (
     <>
       <Box
@@ -15,8 +15,8 @@ export default function Content({ state, toggleDrawer }) {
           justifyContent: "flex-start",
         }}
       >
-        <Nav state={state} toggleDrawer={toggleDrawer} />
-        <Main state={state} />
+        <Nav />
+        <Main />
         {/* <EditUser /> */}
       </Box>
     </>

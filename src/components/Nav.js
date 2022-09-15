@@ -10,6 +10,8 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import InboxIcon from "@mui/icons-material/Inbox";
 import { CLIENT_MANAGE, TEST_MANAGE } from "../enums/menuList";
+import { useRecoilState } from "recoil";
+import { isNavOpen } from "../App";
 
 const useStyles = makeStyles({
   drawer: {
@@ -26,18 +28,14 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Nav({ state, toggleDrawer }) {
-  console.log("state: ", state);
+export default function Nav() {
   const classes = useStyles({ height: "100vh" });
+  const [isOpen, setIsOpen] = useRecoilState(isNavOpen);
 
-  const list = (anchor) => {
+  const list = () => {
     return (
       <>
-        <Box
-          sx={{ width: 200, background: "white" }}
-          role="presentation"
-          onClick={toggleDrawer(anchor, false)}
-        >
+        <Box sx={{ width: 200, background: "white" }}>
           <List>
             {CLIENT_MANAGE.map((item) => (
               <ListItem disablePadding key={item.key}>
@@ -72,19 +70,19 @@ export default function Nav({ state, toggleDrawer }) {
 
   return (
     <>
-      {state.left === true ? (
+      {isOpen && (
         <>
           <Drawer
             anchor={"left"}
-            open={state["left"]}
-            onClose={toggleDrawer("left", false)}
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
             className={classes.drawer}
             variant="persistent"
           >
-            {list("left")}
+            {list()}
           </Drawer>
         </>
-      ) : null}
+      )}
     </>
   );
 }
