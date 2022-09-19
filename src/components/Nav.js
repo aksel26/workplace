@@ -16,16 +16,13 @@ import { isNavOpen } from "../App";
 const useStyles = makeStyles({
   drawer: {
     position: "relative",
-    width: 200,
     "& .MuiBackdrop-root": {
       display: "none",
-      transition: "all .0.1s",
     },
     "& .MuiDrawer-paper": {
       width: 200,
       position: "absolute",
       height: (props) => props.height,
-      transition: "all .0.1s",
     },
   },
 });
@@ -71,19 +68,19 @@ export default function Nav() {
 
   return (
     <>
-      {/* {isOpen.isOpen && ( */}
-      {/* <> */}
       <Drawer
         anchor={"left"}
         open={isOpen.isOpen}
         onClose={() => setIsOpen(false)}
         className={classes.drawer}
         variant="persistent"
+        sx={{
+          width: isOpen.isOpen ? 200 : 0,
+          transition: "all .5s",
+        }}
       >
         {list()}
       </Drawer>
-      {/* </> */}
-      {/* )} */}
     </>
   );
 }
