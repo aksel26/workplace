@@ -76,8 +76,9 @@ export default function Nav() {
         variant="persistent"
         sx={{
           width: isOpen.isOpen ? 200 : 0,
-          transition: "all .5s",
+          transition: "all .7s",
         }}
+        transitionDuration={{ enter: 690, exit: 300 }}
       >
         {list()}
       </Drawer>
