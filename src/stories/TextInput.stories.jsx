@@ -3,6 +3,16 @@ import TextInput from "../components/UI/atoms/TextInput";
 export default {
   title: "atoms/TextInput",
   component: TextInput,
+  argTypes: {
+    color: {
+      options: ["success", "secondary", "warning"],
+      control: { type: "radio" },
+    },
+    variant: {
+      options: ["outlined", "standard"],
+      control: { type: "radio" },
+    },
+  },
 };
 
 const Template = (args) => <TextInput {...args} />;
