@@ -1,7 +1,7 @@
 import Typo from "../components/UI/atoms/Typo";
 
 export default {
-  title: "atoms/Text",
+  title: "atoms/Typo",
   component: Typo,
   argTypes: {
     text: "아놔",

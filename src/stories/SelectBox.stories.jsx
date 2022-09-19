@@ -13,14 +13,8 @@ export default {
 
 const Template = (args) => <SelectBox {...args} />;
 
-export const Outlined = Template.bind({});
-Outlined.args = {
+export const Default = Template.bind({});
+Default.args = {
   variant: "outlined",
-  label: "Text",
-};
-
-export const Standard = Template.bind({});
-Standard.args = {
-  variant: "standard",
   label: "Text",
 };

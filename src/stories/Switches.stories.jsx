@@ -14,14 +14,12 @@ export default {
     },
     color: {
       options: ["primary", "secondary", "error", "info", "success", "warning"],
-      control: { type: "radio" },
+      control: { type: "select" },
     },
   },
 };
 
 const Template = (args) => <Switches {...args} />;
 
-export const Text = Template.bind({});
-Text.args = {
-  //   checked: false,
-};
+export const Default = Template.bind({});
+Default.args = {};

@@ -1,9 +1,8 @@
-import { InputAdornment } from "@mui/material";
-import TextInput from "../components/UI/atoms/TextInput";
+import PasswordInput from "../components/UI/molcules/PasswordInput";
 
 export default {
-  title: "atoms/TextInput",
-  component: TextInput,
+  title: "molcules/PasswordInput",
+  component: PasswordInput,
   argTypes: {
     color: {
       options: ["success", "secondary", "warning"],
@@ -13,14 +12,10 @@ export default {
       options: ["outlined", "standard"],
       control: { type: "radio" },
     },
-    size: {
-      options: ["medium", "small"],
-      control: { type: "radio" },
-    },
   },
 };
 
-const Template = (args) => <TextInput {...args} />;
+const Template = (args) => <PasswordInput {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -28,6 +23,4 @@ Default.args = {
   variant: "standard",
   color: "success",
   content: "",
-  // sx: { width: "15rem" },
-  size: "small",
 };

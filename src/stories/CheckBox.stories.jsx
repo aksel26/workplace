@@ -1,4 +1,4 @@
-import CheckBox from "./CheckBox";
+import CheckBox from "../components/UI/atoms/CheckBox";
 
 export default {
   title: "atoms/CheckBox",
@@ -17,7 +17,7 @@ export default {
 
 const Template = (args) => <CheckBox {...args} />;
 
-export const Text = Template.bind({});
-Text.args = {
+export const Default = Template.bind({});
+Default.args = {
   checked: false,
 };
