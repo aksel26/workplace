@@ -23,7 +23,7 @@ export default function LoginTemplate(props) {
     >
       <Box
         sx={{
-          width: "30%",
+          width: "30rem",
           background: "white",
           height: "80%",
           borderRadius: "7px",
@@ -32,11 +32,11 @@ export default function LoginTemplate(props) {
           justifyContent: "center",
           alignItems: "center",
           outlineStyle: "solid",
-          outlineColor: theme.palette.primary.dark,
-          outlineWidth: ".5px",
+          outlineColor: "#90CAF9",
+          outlineWidth: "1.5px",
         }}
       >
-        <Grid sx={{ width: "80%", height: "auto" }} container rowSpacing={4}>
+        <Grid sx={{ width: "80%" }} container rowSpacing={4}>
           <Grid item xs={12}>
             <Typo variant="h3" text="ACG" />
           </Grid>
@@ -46,9 +46,13 @@ export default function LoginTemplate(props) {
           <Grid item xs={12}>
             <PasswordInput label={"PW"} />
           </Grid>
-          <Grid item xs={12}>
-            비밀번호변경
-            <SwitchWithLabel label={"보안로그인"} />
+          <Grid item container xs={12} alignItems="center">
+            <Grid item xs={6}>
+              <Typo variant="body" text="비밀번호변경" />
+            </Grid>
+            <Grid item xs={6}>
+              <SwitchWithLabel label={"보안로그인"} />
+            </Grid>
           </Grid>
           {/* <Grid item xs={3}>
             <Buttons text={"계정생성"} primary variant={"contained"} />
