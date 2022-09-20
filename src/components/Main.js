@@ -1,7 +1,11 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Paper, Typography } from "@mui/material";
 import React from "react";
 import PaperComponent from "./PaperComponent";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
+import TestInfoBox from "./UI/organism/TestInfoBox";
+import Carousel from "react-material-ui-carousel";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 
 export default function Main() {
   return (
@@ -27,30 +31,53 @@ export default function Main() {
               >
                 검사/운영
               </Typography>
-              <Grid
-                container
-                spacing={2}
-                sx={{ border: "1px solid black", borderRadius: "7px" }}
+              <Carousel
+                navButtonsAlwaysVisible
+                NextIcon={<NavigateNextIcon />}
+                PrevIcon={<NavigateBeforeIcon />}
+                swipe={false}
+                index={0}
+                animation="slide"
               >
-                <Grid item xs={4}>
-                  <fieldset className="summaryTitle">
-                    <legend>채용그룹 관리</legend>
-                    <PaperComponent children={"DataSet"} />
-                  </fieldset>
+                <Grid
+                  container
+                  columnSpacing={2}
+                  justifyContent="flex-start"
+                  sx={{ padding: "30px 60px" }}
+                >
+                  <Grid item>
+                    <TestInfoBox />
+                  </Grid>
+                  <Grid item>
+                    <TestInfoBox />
+                  </Grid>
+                  <Grid item>
+                    <TestInfoBox />
+                  </Grid>
+                  <Grid item>
+                    <TestInfoBox />
+                  </Grid>
+                  <Grid item>
+                    <TestInfoBox />
+                  </Grid>
+                  {/* <Grid item>
+                    <TestInfoBox />
+                  </Grid> */}
                 </Grid>
-                <Grid item xs={4}>
-                  <fieldset className="summaryTitle">
-                    <legend>고객사 관리</legend>
-                    <PaperComponent children={"DataSet"} />
-                  </fieldset>
+                <Grid
+                  container
+                  columnSpacing={2}
+                  justifyContent="flex-start"
+                  sx={{ padding: "30px 60px" }}
+                >
+                  <Grid item>
+                    <TestInfoBox />
+                  </Grid>
+                  <Grid item>
+                    <TestInfoBox />
+                  </Grid>
                 </Grid>
-                <Grid item xs={4}>
-                  <fieldset className="summaryTitle">
-                    <legend>응시자 Q&A</legend>
-                    <PaperComponent children={"DataSet"} />
-                  </fieldset>
-                </Grid>
-              </Grid>
+              </Carousel>
             </Box>
           </Grid>
         </Grid>
@@ -88,14 +115,7 @@ export default function Main() {
                   consectetur adipiscing elit. Ut lorem leo, rhoncus et est at,
                   vulputate eleifend mi. Phasellus tincidunt est nulla, vitae
                   placerat diam imperdiet eget.
-                  {/* <PaperComponent children={"채용그룹 관리"} /> */}
                 </Grid>
-                {/* <Grid item xs={4}>
-                  <PaperComponent children={"고객사 관리"} />
-                </Grid>
-                <Grid item xs={4}>
-                  <PaperComponent children={"응시자 Q&A"} />
-                </Grid> */}
               </Grid>
             </Box>
           </Grid>
